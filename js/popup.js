@@ -1,20 +1,40 @@
-var switch1 = document.getElementById("customSwitch1");
+var switchWidth = document.getElementById("customSwitchWidth");
+var switchToolbar = document.getElementById("customSwitchToolbar");
 
 function restore_options() {
-    chrome.storage.sync.get(["enabled"], function (enabled) {
-        switch1.checked = enabled["enabled"];
-        document.getElementById("switch-label-on-of").innerHTML =
-            enabled["enabled"] ? "on" : "off";
+    chrome.storage.sync.get({
+        width: true
+    }, function (enabled) {
+        switchWidth.checked = enabled["width"];
+        document.getElementById("switch-label-on-of-width").innerHTML =
+            enabled["width"] ? "on" : "off";
+    });
+    chrome.storage.sync.get({
+        toolbar: true
+    }, function (enabled) {
+        switchToolbar.checked = enabled["toolbar"];
+        document.getElementById("switch-label-on-of-toolbar").innerHTML =
+            enabled["toolbar"] ? "on" : "off";
     });
 }
 
-function save_options() {
+function save_options_width() {
     chrome.storage.sync.set({
-        enabled: this.checked
+        width: this.checked,
     }, function () {});
-    document.getElementById("switch-label-on-of").innerHTML =
+    document.getElementById("switch-label-on-of-width").innerHTML =
         this.checked ? "on" : "off";
 }
 
-switch1.addEventListener('change', save_options);
+
+function save_options_toolbar() {
+    chrome.storage.sync.set({
+        toolbar: this.checked,
+    }, function () {});
+    document.getElementById("switch-label-on-of-toolbar").innerHTML =
+        this.checked ? "on" : "off";
+}
+
+switchWidth.addEventListener('change', save_options_width);
+switchToolbar.addEventListener('change', save_options_toolbar);
 document.addEventListener('DOMContentLoaded', restore_options);

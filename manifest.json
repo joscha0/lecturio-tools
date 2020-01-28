@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "lecturio.de full width video",
+  "name": "lecturio.de tools",
   "version": "0.1",
-  "description": "lecturio.de full width video for a better viewing experience",
+  "description": "lecturio.de tools (full width, picture in picture) for a better viewing experience",
   "icons": {
     "16": "img/icon16.png",
     "48": "img/icon48.png",
@@ -17,6 +17,8 @@
     "default_popup": "popup.html"
   },
   "permissions": [
+    "tabs",
+    "https://www.lecturio.de/*",
     "storage"
   ],
   "options_ui": {
