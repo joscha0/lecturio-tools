@@ -12,33 +12,8 @@ chrome.storage.sync.get({
 }, function (enabled) {
     if (enabled["toolbar"]) {
         var lecturioTools = document.createElement("div");
-        var btnPIP = document.createElement("BUTTON");
         var btnVideo = document.createElement("BUTTON");
         var buttonRow = document.createElement("div");
-
-        async function open_in_pip() {
-            const videos = Array.from(document.querySelectorAll('video'));
-            btnPIP.disabled = true;
-            if (videos.length === 0)
-                return;
-
-            const video = videos[0];
-            try {
-                if (video !== document.pictureInPictureElement) {
-                    await video.requestPictureInPicture();
-                    btnPIP.innerHTML = "close video in picture in picture mode";
-                } else {
-                    await document.exitPictureInPicture();
-                    btnPIP.innerHTML = "open video in picture in picture mode";
-                }
-
-            } catch (error) {} finally {
-                btnPIP.disabled = false;
-            }
-        }
-        btnPIP.innerHTML = "open video in picture in picture mode";
-        btnPIP.classList = 'btn btn-primary button-lecturio-tools';
-        btnPIP.addEventListener('click', open_in_pip);
 
         function goto_video() {
             const videos = Array.from(document.querySelectorAll('video'));
@@ -56,7 +31,6 @@ chrome.storage.sync.get({
         btnVideo.addEventListener('click', goto_video);
 
         buttonRow.classList = 'tools-buttonRow';
-        buttonRow.appendChild(btnPIP);
         buttonRow.appendChild(btnVideo);
 
         lecturioTools.classList = 'container';
