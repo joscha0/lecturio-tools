@@ -27,5 +27,10 @@
     "css": ["styles.css"],
     "js": ["content.js"],
     "matches": ["https://www.lecturio.de/*"]
-  }]
+  }],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "lecturio-tools@joscha0.com"
+    }
+  }
 }
