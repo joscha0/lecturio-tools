@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "lecturio.de tools",
-  "version": "0.1",
+  "version": "0.2",
   "description": "lecturio.de tools (full width, picture in picture) for a better viewing experience",
   "icons": {
     "16": "img/icon16.png",
@@ -17,8 +17,6 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "tabs",
-    "https://www.lecturio.de/*",
     "storage"
   ],
   "options_ui": {
