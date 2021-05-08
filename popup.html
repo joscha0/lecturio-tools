@@ -2,47 +2,33 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>Lecturio full width video</title>
-
-	<script src="js/jquery-2.0.3.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="css/popup.css" rel="stylesheet" media="screen">
+  <meta charset="utf-8">
+  <title>Lecturio full width video</title>
+  <link href="css/popup.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
-	<div class="container">
-    <h4 class="text-center">lecturio.de tools</h4>
-  <p class="text-center">(refresh the page to see changes)</p>
-  <div class="row">
-    <div class="col my-auto">
-      <p>full width</p>
-    </div>
-    <div class="col my-auto">
-     <div class="custom-control custom-switch">
-		
-		<input type="checkbox" class="custom-control-input" id="customSwitchWidth">
-		<label class="custom-control-label" id="switch-label-on-of-width" for="customSwitchWidth">on</label>
-	</div>
+  <div class="container">
+    <h1 class="text-center">lecturio.de tools</h1>
+    <p class="text-center">(refresh the page to see changes)</p>
+    <div class="row">
+      <p class="text-center">full width</p>
+      <label class="switch">
+        <input type="checkbox" id="customSwitchWidth">
+        <span class="slider"></span>
+      </label>
+      <label id="switch-label-on-of-width" for="customSwitchWidth">on</label>
     </div>
   </div>
   <div class="row">
-    <div class="col my-auto">
-      <p>toolbar</p>
-    </div>
-    <div class="col my-auto">
-     <div class="custom-control custom-switch">
-		
-		<input type="checkbox" class="custom-control-input" id="customSwitchToolbar">
-		<label class="custom-control-label" id="switch-label-on-of-toolbar" for="customSwitchToolbar">on</label>
-	</div>
-    </div>
+    <p class="text-center">toolbar</p>
+    <label class="switch">
+      <input type="checkbox" id="customSwitchToolbar">
+      <span class="slider"></span>
+    </label>
+    <label id="switch-label-on-of-toolbar" for="customSwitchToolbar">on</label>
   </div>
-</div>
-	
-	
+
 </body>
 <script src="js/popup.js"></script>
 
